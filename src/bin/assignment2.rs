@@ -6,7 +6,6 @@ use stanford_algorithms::assignment2::sort_and_count_inversions;
 
 fn load_integer_array() -> io::Result<Vec<i64>> {
     let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-        .join("assignment2_count_inversions")
         .join("IntegerArray.txt");
 
     let file = File::open(path)?;
