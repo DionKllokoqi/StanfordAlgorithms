@@ -25,6 +25,12 @@ fn karatsuba_biguint(x: &BigUint, y: &BigUint) -> BigUint {
     (ten_pow_sq * a_c) + (&ten_pow * ad_plus_bc) + b_d
 }
 
+/// Multiplies to integers using the Karatsuba method.
+/// # Arguments
+/// - integer: left multiplicand
+/// - integer: right multiplicand
+/// # Returns
+/// The integer result of the multiplication of the multiplicands.
 pub fn karatsuba(x: &BigInt, y: &BigInt) -> BigInt {
     if x.is_zero() || y.is_zero() {
         return BigInt::zero();
