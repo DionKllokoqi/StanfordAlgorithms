@@ -15,26 +15,23 @@ fn main() {
     let mut values_median = values.clone();
     let mut values_last = values;
 
-    let (sorted_first, comparisons_first) =
-        stanford_algorithms::assignment3::quicksort(
-            &mut values_first,
-            stanford_algorithms::assignment3::PivotMode::First,
-        );
-    print_edges("first", &sorted_first);
+    let comparisons_first = stanford_algorithms::assignment3::quicksort(
+        &mut values_first,
+        stanford_algorithms::assignment3::PivotMode::First,
+    );
+    print_edges("first", &values_first);
 
-    let (sorted_median, comparisons_median) =
-        stanford_algorithms::assignment3::quicksort(
-            &mut values_median,
-            stanford_algorithms::assignment3::PivotMode::Median,
-        );
-    print_edges("median", &sorted_median);
+    let comparisons_median = stanford_algorithms::assignment3::quicksort(
+        &mut values_median,
+        stanford_algorithms::assignment3::PivotMode::Median,
+    );
+    print_edges("median", &values_median);
 
-    let (sorted_last, comparisons_last) =
-        stanford_algorithms::assignment3::quicksort(
-            &mut values_last,
-            stanford_algorithms::assignment3::PivotMode::Last,
-        );
-    print_edges("last", &sorted_last);
+    let comparisons_last = stanford_algorithms::assignment3::quicksort(
+        &mut values_last,
+        stanford_algorithms::assignment3::PivotMode::Last,
+    );
+    print_edges("last", &values_last);
 
     println!("comparisons (first): {comparisons_first}");
     println!("comparisons (median): {comparisons_median}");

@@ -6,6 +6,7 @@ This repository contains my solutions to the assignments from the Stanford Algor
 
 - **Assignment 1: Integer Multiplication** - Implementation of Karatsuba algorithm
 - **Assignment 2: Count Inversions** - Sorting and counting inversions in an array
+- **Assignment 3: QuickSort Comparisons** - Compare pivot strategies and count comparisons
 
 ## Rust Build and Run
 
