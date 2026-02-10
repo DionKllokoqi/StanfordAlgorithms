@@ -1,14 +1,15 @@
-
 fn main() {
-    let input_path = "quicksort_input.txt";
-    let contents = std::fs::read_to_string(input_path)
-        .unwrap_or_else(|err| panic!("Failed to read {input_path}: {err}"));
+    let input_path = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("data")
+        .join("quicksort_input.txt");
+    let contents = std::fs::read_to_string(&input_path)
+        .unwrap_or_else(|err| panic!("Failed to read {}: {err}", input_path.display()));
 
     let values: Vec<i64> = contents
         .lines()
         .filter(|line| !line.trim().is_empty())
         .map(|line| line.trim().parse::<i64>()
-            .unwrap_or_else(|err| panic!("Invalid integer in {input_path}: {line} ({err})")))
+            .unwrap_or_else(|err| panic!("Invalid integer in {}: {line} ({err})", input_path.display())))
         .collect();
 
     let mut values_first = values.clone();
