@@ -30,6 +30,11 @@ Run Assignment 2 (Count inversions):
 cargo run --bin assignment2
 ```
 
+Run Assignment 3 (QuickSort):
+```sh
+cargo run --bin assignment3
+```
+
 ## Pre-commit Hooks (Rust fmt/clippy)
 
 If you want consistent formatting and linting before commits, install `pre-commit`
