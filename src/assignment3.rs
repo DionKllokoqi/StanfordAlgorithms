@@ -43,11 +43,33 @@ pub fn choose_pivot(input: &mut [i64], pivot: PivotMode) -> usize {
     match pivot {
         PivotMode::First => 0,
         PivotMode::Median => {
-            if input.len() % 2 != 0 {
-                return input.len() / 2 + 1
+            fn median_index(first_idx: usize, mid_idx: usize, last_idx: usize, input: &[i64]) -> usize {
+                let first = input[first_idx];
+                let mid = input[mid_idx];
+                let last = input[last_idx];
+
+                if (first <= mid && mid <= last) || (last <= mid && mid <= first) {
+                    mid_idx
+                } else if (mid <= first && first <= last) || (last <= first && first <= mid) {
+                    first_idx
+                } else {
+                    last_idx
+                }
             }
 
-            input.len() / 2
+            if input.len() % 2 != 0 {
+                let first_idx = 0;
+                let mid_idx = input.len() / 2;
+                let last_idx = input.len() - 1;
+
+                return median_index(first_idx, mid_idx, last_idx, input);
+            }
+
+            let first_idx = 0;
+            let mid_idx = input.len() / 2 - 1;
+            let last_idx = input.len() - 1;
+
+            median_index(first_idx, mid_idx, last_idx, input)
         },
         PivotMode::Last => { input.len() - 1 }
     }
