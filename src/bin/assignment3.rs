@@ -8,8 +8,14 @@ fn main() {
     let values: Vec<i64> = contents
         .lines()
         .filter(|line| !line.trim().is_empty())
-        .map(|line| line.trim().parse::<i64>()
-            .unwrap_or_else(|err| panic!("Invalid integer in {}: {line} ({err})", input_path.display())))
+        .map(|line| {
+            line.trim().parse::<i64>().unwrap_or_else(|err| {
+                panic!(
+                    "Invalid integer in {}: {line} ({err})",
+                    input_path.display()
+                )
+            })
+        })
         .collect();
 
     let mut values_first = values.clone();

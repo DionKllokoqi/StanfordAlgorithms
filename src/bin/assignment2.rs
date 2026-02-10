@@ -5,8 +5,7 @@ use std::path::PathBuf;
 use stanford_algorithms::assignment2::sort_and_count_inversions;
 
 fn load_integer_array() -> io::Result<Vec<i64>> {
-    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-        .join("data/integer_array.txt");
+    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("data/integer_array.txt");
 
     let file = File::open(path)?;
     let reader = BufReader::new(file);
