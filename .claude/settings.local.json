@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/noidk/projects/learning/stanford-dsa-problem-solutions -name *test* -o -name *tests*)",
+      "Bash(cargo test:*)"
+    ]
+  }
+}
