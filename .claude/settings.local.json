@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(find /home/noidk/projects/learning/stanford-dsa-problem-solutions -name *test* -o -name *tests*)",
-      "Bash(cargo test:*)"
+      "Bash(cargo test:*)",
+      "Bash(cargo add:*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo fmt:*)"
     ]
   }
 }

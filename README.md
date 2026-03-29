@@ -7,6 +7,7 @@ This repository contains my solutions to the assignments from the Stanford Algor
 - **Assignment 1: Integer Multiplication** - Implementation of Karatsuba algorithm
 - **Assignment 2: Count Inversions** - Sorting and counting inversions in an array
 - **Assignment 3: QuickSort Comparisons** - Compare pivot strategies and count comparisons
+- **Assignment 4: Karger's Min Cut** - Randomized contraction algorithm using Union-Find
 
 ## Rust Build and Run
 
@@ -34,6 +35,11 @@ cargo run --bin assignment2
 Run Assignment 3 (QuickSort):
 ```sh
 cargo run --bin assignment3
+```
+
+Run Assignment 4 (Karger's Min Cut):
+```sh
+cargo run --bin assignment4
 ```
 
 ## Pre-commit Hooks (Rust fmt/clippy)
